@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vizag Cafe in Raipur — Authentic South Indian cuisine, starters, soups, desserts, beverages & ice creams. Premium dining with fresh ingredients and hygienic preparation.">
+  <meta name="keywords" content="Vizag Cafe, Raipur cafe, South Indian food, dosa, idli, filter coffee, Raipur restaurant">
+  <meta name="author" content="Vizag Cafe">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://vizagcafe.in/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vizag Cafe | Authentic South Indian Taste in Raipur">
+  <meta property="og:description" content="Experience premium South Indian flavors at Vizag Cafe, Raipur. Fresh ingredients, hygienic kitchen, family-friendly atmosphere.">
+  <meta property="og:image" content="images/dosa.jpg">
+  <meta property="og:url" content="https://vizagcafe.in/">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:site_name" content="Vizag Cafe">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vizag Cafe | Authentic South Indian Taste in Raipur">
+  <meta name="twitter:description" content="Premium South Indian café in Raipur. Dosa, Idli, Filter Coffee & more.">
+  <meta name="twitter:image" content="images/dosa.jpg">
+
+  <title>Vizag Cafe | Authentic South Indian Taste in Raipur</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            saffron: '#E8782A',
+            'saffron-light': '#F5A623',
+            terracotta: '#C45C26',
+            gold: '#D4A853',
+            cream: '#FDF8F0',
+            'cream-dark': '#F5EDE0',
+            brown: '#2C1810',
+            'brown-light': '#5C3D2E',
+            leaf: '#2D6A4F',
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'Georgia', 'serif'],
+            body: ['DM Sans', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Vizag Cafe",
+    "description": "Premium South Indian café in Raipur serving authentic dosa, idli, filter coffee and more.",
+    "image": "images/dosa.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Near City Center Mall, G.E. Road",
+      "addressLocality": "Raipur",
+      "addressRegion": "Chhattisgarh",
+      "postalCode": "492001",
+      "addressCountry": "IN"
+    },
+    "telephone": "+91-62653-31779",
+    "servesCuisine": ["South Indian", "North Indian", "Indian"],
+    "priceRange": "₹₹",
+    "openingHours": "Mo-Su 08:00-22:00"
+  }
+  </script>
+</head>
+<body class="font-body bg-cream text-brown antialiased">
+
+  <!-- Loading Screen -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-logo">Vizag Cafe</div>
+    <div class="loader-spinner"></div>
+    <p class="mt-4 text-sm text-brown-light tracking-widest uppercase">Loading...</p>
+  </div>
+
+  <!-- Navbar -->
+  <header id="navbar" class="navbar on-hero fixed top-0 left-0 right-0 z-50">
+    <nav class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 sm:py-4 lg:px-8" aria-label="Main navigation">
+      <a href="#home" class="nav-brand flex items-center gap-2.5 group">
+        <span class="nav-brand-icon w-10 h-10 rounded-full bg-gradient-to-br from-saffron to-terracotta flex items-center justify-center text-white font-display font-bold text-lg shadow-lg group-hover:scale-105 transition-transform">V</span>
+        <div>
+          <span class="nav-brand-title font-display font-bold text-xl block leading-tight">Vizag Cafe</span>
+          <span class="nav-brand-sub text-[10px] tracking-widest uppercase">Raipur • South Indian</span>
+        </div>
+      </a>
+
+      <ul class="hidden lg:flex items-center gap-7">
+        <li><a href="#home" class="nav-link text-sm font-medium active">Home</a></li>
+        <li><a href="#about" class="nav-link text-sm font-medium">About</a></li>
+        <li><a href="#menu" class="nav-link text-sm font-medium">Menu</a></li>
+        <li><a href="#gallery" class="nav-link text-sm font-medium">Gallery</a></li>
+        <li><a href="#reviews" class="nav-link text-sm font-medium">Reviews</a></li>
+        <li><a href="#contact" class="nav-link text-sm font-medium">Contact</a></li>
+      </ul>
+
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="#menu" class="btn-primary px-5 py-2.5 rounded-full text-sm font-semibold">View Menu</a>
+        <a href="tel:+916265331779" class="btn-nav-outline px-5 py-2.5 rounded-full text-sm font-semibold">Call Now</a>
+      </div>
+
+      <button id="mobile-toggle" class="mobile-toggle lg:hidden w-11 h-11 flex flex-col items-center justify-center gap-1.5 rounded-xl transition-colors" aria-label="Open menu">
+        <span class="mobile-toggle-bar w-6 h-0.5 rounded-full"></span>
+        <span class="mobile-toggle-bar w-6 h-0.5 rounded-full"></span>
+        <span class="mobile-toggle-bar w-4 h-0.5 rounded-full"></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-overlay" class="mobile-overlay fixed inset-0 bg-brown/50 backdrop-blur-sm z-[60] lg:hidden"></div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-cream z-[70] shadow-2xl lg:hidden flex flex-col">
+    <div class="flex items-center justify-between p-6 border-b border-brown/10">
+      <span class="font-display font-bold text-xl text-brown">Menu</span>
+      <button id="mobile-close" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-cream-dark transition-colors" aria-label="Close menu">
+        <svg class="w-6 h-6 text-brown" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 flex flex-col gap-1">
+      <a href="#home" class="py-3 px-4 rounded-xl hover:bg-cream-dark font-medium text-brown transition-colors">Home</a>
+      <a href="#about" class="py-3 px-4 rounded-xl hover:bg-cream-dark font-medium text-brown transition-colors">About Us</a>
+      <a href="#features" class="py-3 px-4 rounded-xl hover:bg-cream-dark font-medium text-brown transition-colors">Features</a>
+      <a href="#menu" class="py-3 px-4 rounded-xl hover:bg-cream-dark font-medium text-brown transition-colors">Menu</a>
+      <a href="#signature" class="py-3 px-4 rounded-xl hover:bg-cream-dark font-medium text-brown transition-colors">Signature Dishes</a>
+      <a href="#reviews" class="py-3 px-4 rounded-xl hover:bg-cream-dark font-medium text-brown transition-colors">Reviews</a>
+      <a href="#gallery" class="py-3 px-4 rounded-xl hover:bg-cream-dark font-medium text-brown transition-colors">Gallery</a>
+      <a href="#location" class="py-3 px-4 rounded-xl hover:bg-cream-dark font-medium text-brown transition-colors">Location</a>
+      <a href="#faq" class="py-3 px-4 rounded-xl hover:bg-cream-dark font-medium text-brown transition-colors">FAQ</a>
+      <a href="#contact" class="py-3 px-4 rounded-xl hover:bg-cream-dark font-medium text-brown transition-colors">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-brown/10 space-y-3">
+      <a href="#menu" class="btn-primary block text-center px-5 py-3 rounded-full text-sm font-semibold">View Menu</a>
+      <a href="https://wa.me/916265331779" target="_blank" rel="noopener" class="btn-whatsapp block text-center px-5 py-3 rounded-full text-sm font-semibold">WhatsApp Order</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section relative min-h-screen flex items-center overflow-hidden">
+      <!-- Background -->
+      <div class="absolute inset-0">
+        <img src="images/dosa.jpg" alt="South Indian dosa and sambar at Vizag Cafe" class="hero-image w-full h-full object-cover" width="1920" height="1080" loading="eager">
+        <div class="hero-gradient absolute inset-0"></div>
+        <div class="hero-pattern absolute inset-0 opacity-40"></div>
+        <div class="hero-saffron-glow absolute inset-0 pointer-events-none"></div>
+      </div>
+
+      <!-- Decorative South Indian accents -->
+      <div class="hero-kolam hero-kolam-tl" aria-hidden="true"></div>
+      <div class="hero-kolam hero-kolam-br" aria-hidden="true"></div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 pb-20 w-full">
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <!-- Left Content -->
+          <div class="hero-content">
+            <div class="hero-welcome-badge inline-flex items-center gap-2 mb-5">
+              <span class="hero-tamil text-saffron-light font-medium">ஸ்வாகதம்</span>
+              <span class="w-1 h-1 rounded-full bg-saffron-light/60"></span>
+              <span class="text-xs sm:text-sm text-white/80 tracking-widest uppercase">Authentic South Indian Kitchen</span>
+            </div>
+
+            <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-bold text-white leading-[1.1] mb-5">
+              Vizag <span class="text-transparent bg-clip-text bg-gradient-to-r from-saffron-light via-gold to-saffron">Cafe</span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-white/85 leading-relaxed mb-6 max-w-lg">
+              Crispy dosas, fluffy idlis, aromatic filter coffee — experience the true flavors of South India, crafted fresh every day in Raipur.
+            </p>
+
+            <!-- South Indian highlights -->
+            <div class="flex flex-wrap gap-2 sm:gap-3 mb-8">
+              <span class="hero-pill">🥘 Masala Dosa</span>
+              <span class="hero-pill">☕ Filter Kaapi</span>
+              <span class="hero-pill">🌿 100% Veg</span>
+              <span class="hero-pill">✨ Pure South Taste</span>
+            </div>
+
+            <div class="flex flex-wrap gap-3 sm:gap-4">
+              <a href="#menu" class="btn-primary px-7 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm sm:text-base font-semibold inline-flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                View Menu
+              </a>
+              <a href="#contact" class="hero-btn-outline px-7 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm sm:text-base font-semibold inline-flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                Contact Us
+              </a>
+            </div>
+          </div>
+
+          <!-- Right — Food Showcase -->
+          <div class="hero-showcase hidden md:block relative">
+            <div class="hero-showcase-main rounded-3xl overflow-hidden shadow-2xl border-2 border-saffron/30">
+              <img src="images/dosa.jpg" alt="Crispy Masala Dosa" class="w-full h-72 lg:h-80 object-cover" loading="eager">
+              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-brown/90 to-transparent p-5">
+                <p class="text-saffron-light text-xs tracking-widest uppercase mb-1">Bestseller</p>
+                <p class="text-white font-display text-xl font-bold">Masala Dosa</p>
+              </div>
+            </div>
+            <div class="hero-showcase-float hero-showcase-float-1">
+              <img src="images/coffee.jpg" alt="Filter Coffee" class="w-20 h-20 rounded-2xl object-cover" loading="lazy">
+              <div>
+                <p class="text-white text-sm font-semibold">Filter Kaapi</p>
+                <p class="text-white/60 text-xs">South Indian Style</p>
+              </div>
+            </div>
+            <div class="hero-showcase-float hero-showcase-float-2">
+              <img src="images/idli.jpg" alt="Idli Sambar" class="w-20 h-20 rounded-2xl object-cover" loading="lazy">
+              <div>
+                <p class="text-white text-sm font-semibold">Idli Sambar</p>
+                <p class="text-white/60 text-xs">Soft &amp; Fresh</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/60">
+        <span class="text-[10px] tracking-[0.2em] uppercase">Scroll Down</span>
+        <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
+          <div class="w-1.5 h-3 bg-saffron-light rounded-full animate-bounce"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="py-20 lg:py-28 relative overflow-hidden">
+      <div class="pattern-dots absolute inset-0 opacity-50 pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div class="reveal-left relative">
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+              <img src="images/cafe.jpg" alt="Vizag Cafe interior dining area" class="w-full h-[400px] lg:h-[520px] object-cover" width="800" height="520" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-brown/40 to-transparent"></div>
+            </div>
+            <div class="absolute -bottom-6 -right-6 lg:-right-10 glass-card rounded-2xl p-6 max-w-[200px] hidden sm:block">
+              <p class="font-display text-3xl font-bold text-terracotta">100%</p>
+              <p class="text-sm text-brown-light font-medium">Authentic South Indian Recipes</p>
+            </div>
+            <div class="absolute -top-4 -left-4 w-24 h-24 border-2 border-saffron/30 rounded-2xl hidden lg:block"></div>
+          </div>
+
+          <div class="reveal-right">
+            <span class="section-badge mb-4 inline-block">Our Story</span>
+            <h2 class="section-title text-3xl sm:text-4xl lg:text-5xl text-brown mb-6">A Taste of Tradition,<br><span class="text-terracotta">Crafted with Passion</span></h2>
+            <p class="text-brown-light leading-relaxed mb-6">
+              Born from a love for authentic South Indian cuisine, Vizag Cafe brings the vibrant flavors of coastal Andhra and Tamil Nadu to the heart of Raipur. Every dish is a celebration of tradition — from hand-ground spices to freshly fermented batter.
+            </p>
+            <p class="text-brown-light leading-relaxed mb-8">
+              We believe great food brings families together. Whether you're craving a crispy masala dosa for breakfast or a comforting bowl of tomato soup for dinner, Vizag Cafe is your home away from home.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-4 stagger-children">
+              <div class="reveal flex items-start gap-3" style="--i:0">
+                <div class="w-10 h-10 rounded-lg bg-saffron/10 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-brown mb-1">Hygienic Preparation</h3>
+                  <p class="text-sm text-brown-light">Spotless kitchen with strict quality standards</p>
+                </div>
+              </div>
+              <div class="reveal flex items-start gap-3" style="--i:1">
+                <div class="w-10 h-10 rounded-lg bg-saffron/10 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-brown mb-1">Fresh Ingredients</h3>
+                  <p class="text-sm text-brown-light">Locally sourced, daily fresh produce</p>
+                </div>
+              </div>
+              <div class="reveal flex items-start gap-3" style="--i:2">
+                <div class="w-10 h-10 rounded-lg bg-saffron/10 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-brown mb-1">Family-Friendly</h3>
+                  <p class="text-sm text-brown-light">Comfortable seating for all ages</p>
+                </div>
+              </div>
+              <div class="reveal flex items-start gap-3" style="--i:3">
+                <div class="w-10 h-10 rounded-lg bg-saffron/10 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-brown mb-1">Authentic Flavors</h3>
+                  <p class="text-sm text-brown-light">Traditional recipes passed down generations</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special Features -->
+    <section id="features" class="py-20 lg:py-28 bg-gradient-to-b from-cream-dark/50 to-cream">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+          <span class="section-badge mb-4 inline-block">Why We're Special</span>
+          <h2 class="section-title text-3xl sm:text-4xl lg:text-5xl text-brown mb-4">Experience the <span class="text-terracotta">Vizag Difference</span></h2>
+          <p class="text-brown-light">Every detail crafted to deliver a premium dining experience that keeps you coming back.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
+          <div class="glass-card rounded-2xl p-6 reveal-scale" style="--i:0">
+            <div class="feature-icon mb-4"><svg class="w-7 h-7 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg></div>
+            <h3 class="font-semibold text-brown mb-2">Authentic South Indian Taste</h3>
+            <p class="text-sm text-brown-light">Traditional recipes with genuine coastal flavors</p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 reveal-scale" style="--i:1">
+            <div class="feature-icon mb-4"><svg class="w-7 h-7 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div>
+            <h3 class="font-semibold text-brown mb-2">Fresh Ingredients</h3>
+            <p class="text-sm text-brown-light">Daily sourced produce for maximum freshness</p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 reveal-scale" style="--i:2">
+            <div class="feature-icon mb-4"><svg class="w-7 h-7 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+            <h3 class="font-semibold text-brown mb-2">Hygienic Kitchen</h3>
+            <p class="text-sm text-brown-light">Spotless preparation with quality assurance</p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 reveal-scale" style="--i:3">
+            <div class="feature-icon mb-4"><svg class="w-7 h-7 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+            <h3 class="font-semibold text-brown mb-2">Family Seating</h3>
+            <p class="text-sm text-brown-light">Spacious, comfortable dining for everyone</p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 reveal-scale" style="--i:4">
+            <div class="feature-icon mb-4"><svg class="w-7 h-7 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+            <h3 class="font-semibold text-brown mb-2">Quick Service</h3>
+            <p class="text-sm text-brown-light">Fast, efficient service without compromising quality</p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 reveal-scale" style="--i:5">
+            <div class="feature-icon mb-4"><svg class="w-7 h-7 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+            <h3 class="font-semibold text-brown mb-2">Affordable Pricing</h3>
+            <p class="text-sm text-brown-light">Premium taste at prices that delight</p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 reveal-scale" style="--i:6">
+            <div class="feature-icon mb-4"><svg class="w-7 h-7 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div>
+            <h3 class="font-semibold text-brown mb-2">Online Orders Available</h3>
+            <p class="text-sm text-brown-light">Order via WhatsApp for quick delivery</p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 reveal-scale" style="--i:7">
+            <div class="feature-icon mb-4"><svg class="w-7 h-7 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg></div>
+            <h3 class="font-semibold text-brown mb-2">Premium Dining Experience</h3>
+            <p class="text-sm text-brown-light">Elegant ambiance with warm hospitality</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Menu -->
+    <section id="menu" class="py-20 lg:py-28 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-10 reveal">
+          <span class="section-badge mb-4 inline-block">Our Menu</span>
+          <h2 class="section-title text-3xl sm:text-4xl lg:text-5xl text-brown mb-4">Explore Our <span class="text-terracotta">Delicious Menu</span></h2>
+          <p class="text-brown-light">From crispy dosas to creamy ice creams — discover flavors crafted with passion.</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12 reveal">
+          <button class="menu-filter-btn active px-4 sm:px-5 py-2 rounded-full text-sm font-medium bg-cream-dark text-brown" data-filter="all">All</button>
+          <button class="menu-filter-btn px-4 sm:px-5 py-2 rounded-full text-sm font-medium bg-cream-dark text-brown" data-filter="south-indian">South Indian</button>
+          <button class="menu-filter-btn px-4 sm:px-5 py-2 rounded-full text-sm font-medium bg-cream-dark text-brown" data-filter="north-indian">North Indian</button>
+          <button class="menu-filter-btn px-4 sm:px-5 py-2 rounded-full text-sm font-medium bg-cream-dark text-brown" data-filter="starters">Starters</button>
+          <button class="menu-filter-btn px-4 sm:px-5 py-2 rounded-full text-sm font-medium bg-cream-dark text-brown" data-filter="soups">Soups</button>
+          <button class="menu-filter-btn px-4 sm:px-5 py-2 rounded-full text-sm font-medium bg-cream-dark text-brown" data-filter="ice-creams">Ice Creams</button>
+          <button class="menu-filter-btn px-4 sm:px-5 py-2 rounded-full text-sm font-medium bg-cream-dark text-brown" data-filter="beverages">Beverages</button>
+        </div>
+
+        <!-- Menu Grid -->
+        <div id="menu-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          <!-- South Indian -->
+          <article class="menu-item reveal-scale" data-category="south-indian" style="--i:0"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/idli.jpg" alt="Idli" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Idli</h3><span class="text-terracotta font-bold text-sm">₹60</span></div><p class="text-xs text-brown-light mt-1">Soft steamed rice cakes</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="south-indian" style="--i:1"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/idli.jpg" alt="Sambar Idli" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Sambar Idli</h3><span class="text-terracotta font-bold text-sm">₹80</span></div><p class="text-xs text-brown-light mt-1">Idli soaked in flavorful sambar</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="south-indian" style="--i:2"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/snacks.jpg" alt="Vada" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Vada</h3><span class="text-terracotta font-bold text-sm">₹50</span></div><p class="text-xs text-brown-light mt-1">Crispy lentil fritters</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="south-indian" style="--i:3"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/snacks.jpg" alt="Sambar Vada" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Sambar Vada</h3><span class="text-terracotta font-bold text-sm">₹70</span></div><p class="text-xs text-brown-light mt-1">Vada served with hot sambar</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="south-indian"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/idli.jpg" alt="Tatte Idli" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Tatte Idli</h3><span class="text-terracotta font-bold text-sm">₹90</span></div><p class="text-xs text-brown-light mt-1">Large plate-sized idli specialty</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="south-indian"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/dosa.jpg" alt="Masala Dosa" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Masala Dosa</h3><span class="text-terracotta font-bold text-sm">₹120</span></div><p class="text-xs text-brown-light mt-1">Crispy dosa with spiced potato filling</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="south-indian"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/dosa.jpg" alt="Plain Dosa" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Plain Dosa</h3><span class="text-terracotta font-bold text-sm">₹80</span></div><p class="text-xs text-brown-light mt-1">Classic golden crispy dosa</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="south-indian"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/dosa.jpg" alt="Onion Dosa" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Onion Dosa</h3><span class="text-terracotta font-bold text-sm">₹100</span></div><p class="text-xs text-brown-light mt-1">Dosa topped with caramelized onions</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="south-indian"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/dosa.jpg" alt="Mysore Dosa" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Mysore Dosa</h3><span class="text-terracotta font-bold text-sm">₹110</span></div><p class="text-xs text-brown-light mt-1">Spicy red chutney spread dosa</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="south-indian"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/dosa.jpg" alt="Cheese Dosa" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Cheese Dosa</h3><span class="text-terracotta font-bold text-sm">₹130</span></div><p class="text-xs text-brown-light mt-1">Melted cheese loaded dosa</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="south-indian"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/dosa.jpg" alt="Rava Dosa" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Rava Dosa</h3><span class="text-terracotta font-bold text-sm">₹100</span></div><p class="text-xs text-brown-light mt-1">Crispy semolina crepe</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="south-indian"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/dosa.jpg" alt="Paper Dosa" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Paper Dosa</h3><span class="text-terracotta font-bold text-sm">₹140</span></div><p class="text-xs text-brown-light mt-1">Extra thin and extra long dosa</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="south-indian"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/dosa.jpg" alt="Uttapam" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Uttapam</h3><span class="text-terracotta font-bold text-sm">₹90</span></div><p class="text-xs text-brown-light mt-1">Thick pancake with vegetables</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="south-indian"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/dosa.jpg" alt="Pongal" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Pongal</h3><span class="text-terracotta font-bold text-sm">₹80</span></div><p class="text-xs text-brown-light mt-1">Comforting rice and lentil porridge</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="south-indian"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/dosa.jpg" alt="Upma" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Upma</h3><span class="text-terracotta font-bold text-sm">₹70</span></div><p class="text-xs text-brown-light mt-1">Savory semolina breakfast</p></div></div></article>
+          <!-- North Indian -->
+          <article class="menu-item reveal-scale" data-category="north-indian"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/food.jpg" alt="Chole Bhature" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Chole Bhature</h3><span class="text-terracotta font-bold text-sm">₹150</span></div><p class="text-xs text-brown-light mt-1">Spiced chickpeas with fluffy bhature</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="north-indian"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/paneer.jpg" alt="Paneer Butter Masala" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Paneer Butter Masala</h3><span class="text-terracotta font-bold text-sm">₹180</span></div><p class="text-xs text-brown-light mt-1">Rich creamy paneer curry</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="north-indian"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/dal.jpg" alt="Dal Tadka" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Dal Tadka</h3><span class="text-terracotta font-bold text-sm">₹120</span></div><p class="text-xs text-brown-light mt-1">Tempered yellow lentil dal</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="north-indian"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/food.jpg" alt="Veg Biryani" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Veg Biryani</h3><span class="text-terracotta font-bold text-sm">₹160</span></div><p class="text-xs text-brown-light mt-1">Aromatic spiced vegetable biryani</p></div></div></article>
+          <!-- Starters -->
+          <article class="menu-item reveal-scale" data-category="starters"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/food.jpg" alt="Veg Manchurian" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Veg Manchurian</h3><span class="text-terracotta font-bold text-sm">₹140</span></div><p class="text-xs text-brown-light mt-1">Crispy veggie balls in tangy sauce</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="starters"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/paneer.jpg" alt="Paneer Chilli" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Paneer Chilli</h3><span class="text-terracotta font-bold text-sm">₹160</span></div><p class="text-xs text-brown-light mt-1">Spicy Indo-Chinese paneer delight</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="starters"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/snacks.jpg" alt="Sweet Corn" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Sweet Corn</h3><span class="text-terracotta font-bold text-sm">₹100</span></div><p class="text-xs text-brown-light mt-1">Buttery sweet corn kernels</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="starters"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/snacks.jpg" alt="Crispy Corn" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Crispy Corn</h3><span class="text-terracotta font-bold text-sm">₹120</span></div><p class="text-xs text-brown-light mt-1">Golden fried corn with spices</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="starters"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/food.jpg" alt="Spring Rolls" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Spring Rolls</h3><span class="text-terracotta font-bold text-sm">₹110</span></div><p class="text-xs text-brown-light mt-1">Crispy vegetable filled rolls</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="starters"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/food.jpg" alt="Veg Lollipop" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Veg Lollipop</h3><span class="text-terracotta font-bold text-sm">₹130</span></div><p class="text-xs text-brown-light mt-1">Crunchy veggie lollipops</p></div></div></article>
+          <!-- Soups -->
+          <article class="menu-item reveal-scale" data-category="soups"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/soup.jpg" alt="Tomato Soup" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Tomato Soup</h3><span class="text-terracotta font-bold text-sm">₹80</span></div><p class="text-xs text-brown-light mt-1">Classic creamy tomato soup</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="soups"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/soup.jpg" alt="Sweet Corn Soup" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Sweet Corn Soup</h3><span class="text-terracotta font-bold text-sm">₹90</span></div><p class="text-xs text-brown-light mt-1">Velvety sweet corn broth</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="soups"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/soup.jpg" alt="Hot & Sour Soup" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Hot &amp; Sour Soup</h3><span class="text-terracotta font-bold text-sm">₹100</span></div><p class="text-xs text-brown-light mt-1">Spicy tangy Indo-Chinese soup</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="soups"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/soup.jpg" alt="Manchow Soup" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Manchow Soup</h3><span class="text-terracotta font-bold text-sm">₹100</span></div><p class="text-xs text-brown-light mt-1">Hearty soup with crispy noodles</p></div></div></article>
+          <!-- Ice Creams -->
+          <article class="menu-item reveal-scale" data-category="ice-creams"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/icecream.jpg" alt="Vanilla Ice Cream" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Vanilla</h3><span class="text-terracotta font-bold text-sm">₹60</span></div><p class="text-xs text-brown-light mt-1">Classic creamy vanilla scoop</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="ice-creams"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/icecream.jpg" alt="Chocolate Ice Cream" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Chocolate</h3><span class="text-terracotta font-bold text-sm">₹70</span></div><p class="text-xs text-brown-light mt-1">Rich Belgian chocolate delight</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="ice-creams"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/icecream.jpg" alt="Strawberry Ice Cream" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Strawberry</h3><span class="text-terracotta font-bold text-sm">₹70</span></div><p class="text-xs text-brown-light mt-1">Fresh strawberry flavored scoop</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="ice-creams"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/icecream.jpg" alt="American Dry Fruits Ice Cream" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">American Dry Fruits</h3><span class="text-terracotta font-bold text-sm">₹90</span></div><p class="text-xs text-brown-light mt-1">Loaded with premium dry fruits</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="ice-creams"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/icecream.jpg" alt="Black Currant Ice Cream" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Black Currant</h3><span class="text-terracotta font-bold text-sm">₹80</span></div><p class="text-xs text-brown-light mt-1">Tangy black currant flavor</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="ice-creams"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/icecream.jpg" alt="Butterscotch Ice Cream" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Butterscotch</h3><span class="text-terracotta font-bold text-sm">₹80</span></div><p class="text-xs text-brown-light mt-1">Sweet butterscotch with crunch</p></div></div></article>
+          <!-- Beverages -->
+          <article class="menu-item reveal-scale" data-category="beverages"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/coffee.jpg" alt="Filter Coffee" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Filter Coffee</h3><span class="text-terracotta font-bold text-sm">₹40</span></div><p class="text-xs text-brown-light mt-1">Authentic South Indian kaapi</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="beverages"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/drinks.jpg" alt="Cold Coffee" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Cold Coffee</h3><span class="text-terracotta font-bold text-sm">₹80</span></div><p class="text-xs text-brown-light mt-1">Chilled blended coffee frappe</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="beverages"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/tea.jpg" alt="Tea" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Tea</h3><span class="text-terracotta font-bold text-sm">₹30</span></div><p class="text-xs text-brown-light mt-1">Freshly brewed masala chai</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="beverages"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/lime.jpg" alt="Fresh Lime Soda" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Fresh Lime Soda</h3><span class="text-terracotta font-bold text-sm">₹50</span></div><p class="text-xs text-brown-light mt-1">Refreshing lime soda cooler</p></div></div></article>
+          <article class="menu-item reveal-scale" data-category="beverages"><div class="menu-item-card bg-white rounded-2xl overflow-hidden shadow-sm border border-brown/5"><div class="overflow-hidden h-40"><img src="images/drinks.jpg" alt="Soft Drinks" class="menu-item-img w-full h-full object-cover" loading="lazy"></div><div class="p-4"><div class="flex justify-between items-start"><h3 class="font-semibold text-brown">Soft Drinks</h3><span class="text-terracotta font-bold text-sm">₹40</span></div><p class="text-xs text-brown-light mt-1">Assorted chilled soft beverages</p></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Signature Dishes -->
+    <section id="signature" class="py-20 lg:py-28 bg-gradient-to-b from-cream to-cream-dark/30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+          <span class="section-badge mb-4 inline-block">Chef's Picks</span>
+          <h2 class="section-title text-3xl sm:text-4xl lg:text-5xl text-brown mb-4">Our <span class="text-terracotta">Signature Dishes</span></h2>
+          <p class="text-brown-light">Best-selling favorites that define the Vizag Cafe experience.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="signature-card reveal-scale h-80" style="--i:0">
+            <img src="images/dosa.jpg" alt="Signature Masala Dosa" class="w-full h-full object-cover" loading="lazy">
+            <span class="signature-badge">Bestseller</span>
+            <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
+              <h3 class="font-display text-xl font-bold text-white mb-1">Masala Dosa</h3>
+              <p class="text-white/80 text-sm">Crispy, golden, perfectly spiced</p>
+            </div>
+          </div>
+          <div class="signature-card reveal-scale h-80" style="--i:1">
+            <img src="images/coffee.jpg" alt="Signature Filter Coffee" class="w-full h-full object-cover" loading="lazy">
+            <span class="signature-badge">Must Try</span>
+            <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
+              <h3 class="font-display text-xl font-bold text-white mb-1">Filter Coffee</h3>
+              <p class="text-white/80 text-sm">Strong, frothy South Indian kaapi</p>
+            </div>
+          </div>
+          <div class="signature-card reveal-scale h-80" style="--i:2">
+            <img src="images/idli.jpg" alt="Signature Idli Sambar" class="w-full h-full object-cover" loading="lazy">
+            <span class="signature-badge">Popular</span>
+            <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
+              <h3 class="font-display text-xl font-bold text-white mb-1">Idli Sambar</h3>
+              <p class="text-white/80 text-sm">Fluffy idlis with aromatic sambar</p>
+            </div>
+          </div>
+          <div class="signature-card reveal-scale h-80" style="--i:3">
+            <img src="images/dosa.jpg" alt="Signature Paper Dosa" class="w-full h-full object-cover" loading="lazy">
+            <span class="signature-badge">Special</span>
+            <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
+              <h3 class="font-display text-xl font-bold text-white mb-1">Paper Dosa</h3>
+              <p class="text-white/80 text-sm">Feather-light, extra crispy delight</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section id="reviews" class="py-20 lg:py-28 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-saffron/5 via-transparent to-gold/5 pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+          <span class="section-badge mb-4 inline-block">Testimonials</span>
+          <h2 class="section-title text-3xl sm:text-4xl lg:text-5xl text-brown mb-4">What Our <span class="text-terracotta">Guests Say</span></h2>
+          <p class="text-brown-light">Real stories from happy customers who love Vizag Cafe.</p>
+        </div>
+
+        <div class="relative">
+          <div class="overflow-hidden mx-12 sm:mx-16">
+            <div id="reviews-track" class="reviews-track gap-6">
+              <div class="review-card w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] glass-card rounded-2xl p-6 sm:p-8">
+                <div class="star-rating flex gap-1 mb-4">
+                  <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <p class="text-brown-light leading-relaxed mb-6 italic">"The masala dosa here is absolutely incredible! Crispy on the outside, perfectly spiced inside. Reminds me of my grandmother's cooking back in Chennai."</p>
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-full bg-gradient-to-br from-saffron to-terracotta flex items-center justify-center text-white font-bold">PK</div>
+                  <div><p class="font-semibold text-brown">Priya Krishnan</p><p class="text-sm text-brown-light">Regular Customer</p></div>
+                </div>
+              </div>
+              <div class="review-card w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] glass-card rounded-2xl p-6 sm:p-8">
+                <div class="star-rating flex gap-1 mb-4">
+                  <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <p class="text-brown-light leading-relaxed mb-6 italic">"Best filter coffee in Raipur, hands down! The ambiance is warm and welcoming. Perfect spot for family Sunday breakfasts."</p>
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-full bg-gradient-to-br from-leaf to-green-600 flex items-center justify-center text-white font-bold">RS</div>
+                  <div><p class="font-semibold text-brown">Rahul Sharma</p><p class="text-sm text-brown-light">Food Blogger</p></div>
+                </div>
+              </div>
+              <div class="review-card w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] glass-card rounded-2xl p-6 sm:p-8">
+                <div class="star-rating flex gap-1 mb-4">
+                  <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <p class="text-brown-light leading-relaxed mb-6 italic">"We ordered via WhatsApp for a family gathering — food arrived fresh and hot. The paper dosa was a huge hit with the kids!"</p>
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-full bg-gradient-to-br from-gold to-saffron-light flex items-center justify-center text-brown font-bold">AM</div>
+                  <div><p class="font-semibold text-brown">Anjali Mehta</p><p class="text-sm text-brown-light">Local Resident</p></div>
+                </div>
+              </div>
+              <div class="review-card w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] glass-card rounded-2xl p-6 sm:p-8">
+                <div class="star-rating flex gap-1 mb-4">
+                  <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <p class="text-brown-light leading-relaxed mb-6 italic">"Hygienic, affordable, and delicious — everything you want in a café. The staff is incredibly friendly and the seating is very comfortable."</p>
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-full bg-gradient-to-br from-terracotta to-brown flex items-center justify-center text-white font-bold">VP</div>
+                  <div><p class="font-semibold text-brown">Vikram Patel</p><p class="text-sm text-brown-light">Corporate Professional</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button id="review-prev" class="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full glass-card flex items-center justify-center hover:bg-saffron/10 transition-colors" aria-label="Previous review">
+            <svg class="w-5 h-5 text-brown" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <button id="review-next" class="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full glass-card flex items-center justify-center hover:bg-saffron/10 transition-colors" aria-label="Next review">
+            <svg class="w-5 h-5 text-brown" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+
+        <div class="flex justify-center gap-2 mt-8">
+          <button class="slider-dot active" aria-label="Slide 1"></button>
+          <button class="slider-dot" aria-label="Slide 2"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-20 lg:py-28 bg-cream-dark/30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+          <span class="section-badge mb-4 inline-block">Gallery</span>
+          <h2 class="section-title text-3xl sm:text-4xl lg:text-5xl text-brown mb-4">A Glimpse of <span class="text-terracotta">Vizag Cafe</span></h2>
+          <p class="text-brown-light">Food, ambiance, and moments that make every visit memorable.</p>
+        </div>
+
+        <div class="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+          <div class="gallery-item reveal-scale"><img src="images/dosa.jpg" alt="Crispy Masala Dosa" loading="lazy"><div class="gallery-overlay"><p class="text-white font-semibold text-sm">Masala Dosa</p></div></div>
+          <div class="gallery-item reveal-scale"><img src="images/cafe.jpg" alt="Café interior" loading="lazy"><div class="gallery-overlay"><p class="text-white font-semibold text-sm">Café Interior</p></div></div>
+          <div class="gallery-item reveal-scale"><img src="images/coffee.jpg" alt="Filter Coffee" loading="lazy"><div class="gallery-overlay"><p class="text-white font-semibold text-sm">Filter Coffee</p></div></div>
+          <div class="gallery-item reveal-scale"><img src="images/dining.jpg" alt="Dining area" loading="lazy"><div class="gallery-overlay"><p class="text-white font-semibold text-sm">Dining Area</p></div></div>
+          <div class="gallery-item reveal-scale"><img src="images/idli.jpg" alt="Idli platter" loading="lazy"><div class="gallery-overlay"><p class="text-white font-semibold text-sm">Idli Platter</p></div></div>
+          <div class="gallery-item reveal-scale"><img src="images/kitchen.jpg" alt="Kitchen highlights" loading="lazy"><div class="gallery-overlay"><p class="text-white font-semibold text-sm">Our Kitchen</p></div></div>
+          <div class="gallery-item reveal-scale"><img src="images/icecream.jpg" alt="Ice cream desserts" loading="lazy"><div class="gallery-overlay"><p class="text-white font-semibold text-sm">Desserts</p></div></div>
+          <div class="gallery-item reveal-scale"><img src="images/food.jpg" alt="Premium dining setup" loading="lazy"><div class="gallery-overlay"><p class="text-white font-semibold text-sm">Premium Setup</p></div></div>
+          <div class="gallery-item reveal-scale"><img src="images/dosa.jpg" alt="South Indian thali" loading="lazy"><div class="gallery-overlay"><p class="text-white font-semibold text-sm">South Indian Thali</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Vizag Cafe -->
+    <section id="why-choose" class="py-20 lg:py-28">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+          <span class="section-badge mb-4 inline-block">Our Promise</span>
+          <h2 class="section-title text-3xl sm:text-4xl lg:text-5xl text-brown mb-4">Why Choose <span class="text-terracotta">Vizag Cafe?</span></h2>
+          <p class="text-brown-light">Four pillars that make us Raipur's favorite South Indian destination.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
+          <div class="glass-card rounded-2xl p-8 text-center reveal-scale" style="--i:0">
+            <div class="feature-icon mx-auto mb-5"><svg class="w-8 h-8 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+            <h3 class="font-display text-xl font-bold text-brown mb-3">Quality Assurance</h3>
+            <p class="text-sm text-brown-light leading-relaxed">Every dish passes strict quality checks before it reaches your table.</p>
+          </div>
+          <div class="glass-card rounded-2xl p-8 text-center reveal-scale" style="--i:1">
+            <div class="feature-icon mx-auto mb-5"><svg class="w-8 h-8 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div>
+            <h3 class="font-display text-xl font-bold text-brown mb-3">Authentic Recipes</h3>
+            <p class="text-sm text-brown-light leading-relaxed">Time-honored recipes from South India, prepared with traditional methods.</p>
+          </div>
+          <div class="glass-card rounded-2xl p-8 text-center reveal-scale" style="--i:2">
+            <div class="feature-icon mx-auto mb-5"><svg class="w-8 h-8 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+            <h3 class="font-display text-xl font-bold text-brown mb-3">Friendly Staff</h3>
+            <p class="text-sm text-brown-light leading-relaxed">Warm, attentive service that makes you feel right at home.</p>
+          </div>
+          <div class="glass-card rounded-2xl p-8 text-center reveal-scale" style="--i:3">
+            <div class="feature-icon mx-auto mb-5"><svg class="w-8 h-8 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg></div>
+            <h3 class="font-display text-xl font-bold text-brown mb-3">Comfortable Seating</h3>
+            <p class="text-sm text-brown-light leading-relaxed">Spacious, well-designed seating for families, couples, and groups.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics -->
+    <section id="stats" class="py-20 lg:py-28 bg-gradient-to-r from-brown via-brown-light to-brown relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10 pattern-dots"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div class="stat-card text-center p-6 reveal-scale" style="--i:0">
+            <p class="stat-number text-4xl sm:text-5xl mb-2" data-count="5000" data-suffix="+">0</p>
+            <p class="text-cream/80 font-medium">Happy Customers</p>
+          </div>
+          <div class="stat-card text-center p-6 reveal-scale" style="--i:1">
+            <p class="stat-number text-4xl sm:text-5xl mb-2" data-count="25000" data-suffix="+">0</p>
+            <p class="text-cream/80 font-medium">Dishes Served</p>
+          </div>
+          <div class="stat-card text-center p-6 reveal-scale" style="--i:2">
+            <p class="stat-number text-4xl sm:text-5xl mb-2" data-count="480" data-suffix="+">0</p>
+            <p class="text-cream/80 font-medium">Positive Reviews</p>
+          </div>
+          <div class="stat-card text-center p-6 reveal-scale" style="--i:3">
+            <p class="stat-number text-4xl sm:text-5xl mb-2" data-count="5" data-suffix="+">0</p>
+            <p class="text-cream/80 font-medium">Years of Experience</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location -->
+    <section id="location" class="py-20 lg:py-28">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+          <span class="section-badge mb-4 inline-block">Find Us</span>
+          <h2 class="section-title text-3xl sm:text-4xl lg:text-5xl text-brown mb-4">Visit <span class="text-terracotta">Vizag Cafe</span></h2>
+          <p class="text-brown-light">Conveniently located in the heart of Raipur with ample parking.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10 items-start">
+          <div class="reveal-left space-y-6">
+            <div class="glass-card rounded-2xl p-6 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-saffron/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-brown mb-1">Full Address</h3>
+                <p class="text-brown-light text-sm leading-relaxed">Shop No. 12, Ground Floor, City Center Complex,<br>G.E. Road, Pandri, Raipur,<br>Chhattisgarh — 492001, India</p>
+              </div>
+            </div>
+            <div class="glass-card rounded-2xl p-6 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-saffron/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-brown mb-1">Landmark</h3>
+                <p class="text-brown-light text-sm">Opposite City Center Mall, next to HDFC Bank — easily visible from G.E. Road.</p>
+              </div>
+            </div>
+            <div class="glass-card rounded-2xl p-6 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-saffron/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-brown mb-1">Parking</h3>
+                <p class="text-brown-light text-sm">Free parking available in the basement of City Center Complex. Valet service on weekends.</p>
+              </div>
+            </div>
+            <div class="glass-card rounded-2xl p-6 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-saffron/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-brown mb-1">Opening Hours</h3>
+                <p class="text-brown-light text-sm">Monday – Sunday: 8:00 AM – 10:00 PM</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal-right map-container h-[350px] lg:h-[480px]">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.8499999999997!2d81.6296!3d21.2514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDE1JzA1LjAiTiA4McKwMzcnNDYuNiJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Vizag Cafe location on Google Maps"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 lg:py-28 bg-gradient-to-b from-cream-dark/30 to-cream">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+          <span class="section-badge mb-4 inline-block">Get in Touch</span>
+          <h2 class="section-title text-3xl sm:text-4xl lg:text-5xl text-brown mb-4">Contact <span class="text-terracotta">Us</span></h2>
+          <p class="text-brown-light">We'd love to hear from you. Reach out for reservations, orders, or feedback.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-5 gap-10">
+          <div class="lg:col-span-2 space-y-5 reveal-left">
+            <a href="tel:+916265331779" class="glass-card rounded-2xl p-5 flex items-center gap-4 hover:shadow-lg transition-shadow group">
+              <div class="w-12 h-12 rounded-xl bg-saffron/10 flex items-center justify-center group-hover:bg-saffron group-hover:text-white transition-colors">
+                <svg class="w-6 h-6 text-terracotta group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <div><p class="text-sm text-brown-light">Phone</p><p class="font-semibold text-brown">+91 62653 31779</p></div>
+            </a>
+            <a href="https://wa.me/916265331779" target="_blank" rel="noopener" class="glass-card rounded-2xl p-5 flex items-center gap-4 hover:shadow-lg transition-shadow group">
+              <div class="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center group-hover:bg-[#25D366] transition-colors">
+                <svg class="w-6 h-6 text-[#25D366] group-hover:text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </div>
+              <div><p class="text-sm text-brown-light">WhatsApp</p><p class="font-semibold text-brown">Order on WhatsApp</p></div>
+            </a>
+            <a href="mailto:hello@vizagcafe.in" class="glass-card rounded-2xl p-5 flex items-center gap-4 hover:shadow-lg transition-shadow group">
+              <div class="w-12 h-12 rounded-xl bg-saffron/10 flex items-center justify-center group-hover:bg-saffron transition-colors">
+                <svg class="w-6 h-6 text-terracotta group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div><p class="text-sm text-brown-light">Email</p><p class="font-semibold text-brown">hello@vizagcafe.in</p></div>
+            </a>
+            <div class="glass-card rounded-2xl p-5 flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-saffron/10 flex items-center justify-center">
+                <svg class="w-6 h-6 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div><p class="text-sm text-brown-light">Address</p><p class="font-semibold text-brown text-sm">G.E. Road, Pandri, Raipur, CG — 492001</p></div>
+            </div>
+          </div>
+
+          <form id="contact-form" class="lg:col-span-3 glass-card rounded-2xl p-6 sm:p-8 reveal-right" novalidate>
+            <div class="grid sm:grid-cols-2 gap-5 mb-5">
+              <div>
+                <label for="name" class="block text-sm font-medium text-brown mb-2">Full Name <span class="text-terracotta">*</span></label>
+                <input type="text" id="name" name="name" required class="form-input w-full px-4 py-3 rounded-xl bg-white/50" placeholder="Your name">
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-brown mb-2">Email <span class="text-terracotta">*</span></label>
+                <input type="email" id="email" name="email" required class="form-input w-full px-4 py-3 rounded-xl bg-white/50" placeholder="your@email.com">
+              </div>
+            </div>
+            <div class="mb-5">
+              <label for="phone" class="block text-sm font-medium text-brown mb-2">Phone Number</label>
+              <input type="tel" id="phone" name="phone" class="form-input w-full px-4 py-3 rounded-xl bg-white/50" placeholder="+91 62653 31779">
+            </div>
+            <div class="mb-6">
+              <label for="message" class="block text-sm font-medium text-brown mb-2">Message <span class="text-terracotta">*</span></label>
+              <textarea id="message" name="message" rows="4" required class="form-input w-full px-4 py-3 rounded-xl bg-white/50 resize-none" placeholder="Tell us about your inquiry..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary w-full sm:w-auto px-8 py-3.5 rounded-full font-semibold inline-flex items-center justify-center gap-2">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Send via WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 lg:py-28">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14 reveal">
+          <span class="section-badge mb-4 inline-block">FAQ</span>
+          <h2 class="section-title text-3xl sm:text-4xl lg:text-5xl text-brown mb-4">Frequently Asked <span class="text-terracotta">Questions</span></h2>
+          <p class="text-brown-light">Everything you need to know before visiting Vizag Cafe.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl overflow-hidden reveal">
+          <div class="faq-item active">
+            <button class="faq-question w-full flex items-center justify-between p-5 sm:p-6 text-left font-semibold text-brown">
+              What are your operating hours?
+              <svg class="faq-icon w-5 h-5 text-terracotta flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-answer px-5 sm:px-6 pb-5 sm:pb-6">
+              <p class="text-brown-light text-sm leading-relaxed">We are open every day from 8:00 AM to 10:00 PM, including weekends and public holidays. Breakfast is served from 8 AM to 11 AM.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question w-full flex items-center justify-between p-5 sm:p-6 text-left font-semibold text-brown">
+              Do you offer home delivery?
+              <svg class="faq-icon w-5 h-5 text-terracotta flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-answer px-5 sm:px-6 pb-5 sm:pb-6">
+              <p class="text-brown-light text-sm leading-relaxed">Yes! You can place orders via WhatsApp at +91 62653 31779. We deliver within a 5 km radius of our café. Minimum order for delivery is ₹200.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question w-full flex items-center justify-between p-5 sm:p-6 text-left font-semibold text-brown">
+              Is parking available?
+              <svg class="faq-icon w-5 h-5 text-terracotta flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-answer px-5 sm:px-6 pb-5 sm:pb-6">
+              <p class="text-brown-light text-sm leading-relaxed">Free basement parking is available at City Center Complex. Valet parking is offered on weekends and holidays.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question w-full flex items-center justify-between p-5 sm:p-6 text-left font-semibold text-brown">
+              Do you have vegetarian options?
+              <svg class="faq-icon w-5 h-5 text-terracotta flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-answer px-5 sm:px-6 pb-5 sm:pb-6">
+              <p class="text-brown-light text-sm leading-relaxed">Our entire menu is 100% vegetarian. We specialize in authentic South Indian dishes along with North Indian, starters, soups, and desserts.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question w-full flex items-center justify-between p-5 sm:p-6 text-left font-semibold text-brown">
+              Can I book the café for private events?
+              <svg class="faq-icon w-5 h-5 text-terracotta flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-answer px-5 sm:px-6 pb-5 sm:pb-6">
+              <p class="text-brown-light text-sm leading-relaxed">Absolutely! We accommodate birthday parties, corporate lunches, and family gatherings. Contact us via phone or email to discuss custom menus and seating arrangements.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question w-full flex items-center justify-between p-5 sm:p-6 text-left font-semibold text-brown">
+              What payment methods do you accept?
+              <svg class="faq-icon w-5 h-5 text-terracotta flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-answer px-5 sm:px-6 pb-5 sm:pb-6">
+              <p class="text-brown-light text-sm leading-relaxed">We accept cash, UPI (GPay, PhonePe, Paytm), credit/debit cards, and all major digital wallets.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-brown text-cream/80 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div>
+          <a href="#home" class="flex items-center gap-2 mb-5">
+            <span class="w-10 h-10 rounded-full bg-gradient-to-br from-saffron to-terracotta flex items-center justify-center text-white font-display font-bold text-lg">V</span>
+            <span class="font-display font-bold text-xl text-cream">Vizag Cafe</span>
+          </a>
+          <p class="text-sm leading-relaxed mb-5">Authentic South Indian flavors in the heart of Raipur. Premium dining, fresh ingredients, warm hospitality.</p>
+          <div class="flex gap-3">
+            <a href="#" class="social-icon w-10 h-10 rounded-full bg-cream/10 flex items-center justify-center" aria-label="Facebook"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="#" class="social-icon w-10 h-10 rounded-full bg-cream/10 flex items-center justify-center" aria-label="Instagram"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="https://wa.me/916265331779" class="social-icon w-10 h-10 rounded-full bg-cream/10 flex items-center justify-center" aria-label="WhatsApp"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-display font-bold text-cream text-lg mb-5">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="#home" class="footer-link text-sm">Home</a></li>
+            <li><a href="#about" class="footer-link text-sm">About Us</a></li>
+            <li><a href="#menu" class="footer-link text-sm">Menu</a></li>
+            <li><a href="#gallery" class="footer-link text-sm">Gallery</a></li>
+            <li><a href="#reviews" class="footer-link text-sm">Reviews</a></li>
+            <li><a href="#contact" class="footer-link text-sm">Contact</a></li>
+            <li><a href="#faq" class="footer-link text-sm">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-display font-bold text-cream text-lg mb-5">Popular Menu</h4>
+          <ul class="space-y-3">
+            <li><a href="#menu" class="footer-link text-sm">Masala Dosa</a></li>
+            <li><a href="#menu" class="footer-link text-sm">Filter Coffee</a></li>
+            <li><a href="#menu" class="footer-link text-sm">Idli Sambar</a></li>
+            <li><a href="#menu" class="footer-link text-sm">Paper Dosa</a></li>
+            <li><a href="#menu" class="footer-link text-sm">Veg Biryani</a></li>
+            <li><a href="#menu" class="footer-link text-sm">Ice Creams</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-display font-bold text-cream text-lg mb-5">Contact Info</h4>
+          <ul class="space-y-4 text-sm">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-saffron-light flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>G.E. Road, Pandri, Raipur, Chhattisgarh — 492001</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-saffron-light flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <a href="tel:+916265331779" class="footer-link">+91 62653 31779</a>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-saffron-light flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <a href="mailto:hello@vizagcafe.in" class="footer-link">hello@vizagcafe.in</a>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-saffron-light flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>8:00 AM – 10:00 PM (Daily)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-cream/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+        <p>&copy; 2026 Vizag Cafe, Raipur. All rights reserved.</p>
+        <p class="text-cream/50">Crafted with love for authentic South Indian taste.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" aria-label="Back to top">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+  </button>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
+
