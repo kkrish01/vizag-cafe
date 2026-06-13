@@ -2,24 +2,35 @@
 
 Premium website for **Vizag Cafe**, a South Indian café in Raipur, India.
 
-## Live Site
-
-After GitHub Pages is enabled, visit:
+## Live Site (GitHub Pages)
 
 `https://YOUR_USERNAME.github.io/vizag-cafe/`
 
-## Tech Stack
+## Deploy to GitHub (one-time setup)
 
-- HTML5
-- Tailwind CSS (CDN)
-- Vanilla JavaScript
-- Mobile-first responsive design
+### Step 1 — GitHub login
+```powershell
+gh auth login
+```
+Browser me login karein (GitHub account chahiye).
+
+### Step 2 — Deploy
+```powershell
+cd c:\xampp\htdocs\vizag_cafe
+.\deploy.ps1
+```
+
+Script automatically:
+- Public repo `vizag-cafe` banayega
+- Code push karega
+- GitHub Pages live karega
+
+**Live link:** `https://YOUR_USERNAME.github.io/vizag-cafe/`
 
 ## Local Development
 
-1. Place files in your web server (e.g. XAMPP `htdocs/vizag_cafe`)
-2. Open `http://localhost/vizag_cafe/`
+`http://localhost/vizag_cafe/`
 
 ## Contact
 
-- Phone / WhatsApp: +91 62653 31779
+- Phone / WhatsApp: **+91 62653 31779**
