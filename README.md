@@ -4,7 +4,7 @@ Premium website for **Vizag Cafe**, a South Indian café in Raipur, India.
 
 ## Live Site (GitHub Pages)
 
-`https://YOUR_USERNAME.github.io/vizag-cafe/`
+`https://kkrish01.github.io/vizag-cafe/`
 
 ## Deploy to GitHub (one-time setup)
 
@@ -25,7 +25,7 @@ Script automatically:
 - Code push karega
 - GitHub Pages live karega
 
-**Live link:** `https://YOUR_USERNAME.github.io/vizag-cafe/`
+**Live link:** `https://kkrish01.github.io/vizag-cafe/`
 
 ## Local Development
 

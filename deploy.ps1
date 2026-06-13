@@ -3,6 +3,7 @@
 
 $ErrorActionPreference = "Stop"
 $repoName = "vizag-cafe"
+$username = "kkrish01"
 
 # Refresh PATH for gh
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
@@ -21,7 +22,8 @@ try {
 }
 
 $username = gh api user -q .login
-Write-Host "Logged in as: $username" -ForegroundColor Green
+if (-not $username) { $username = "kkrish01" }
+Write-Host "Deploying for: $username" -ForegroundColor Green
 
 # Create repo and push (skip if remote exists)
 $remoteExists = git remote get-url origin 2>$null
