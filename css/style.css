@@ -1030,10 +1030,10 @@ section {
     font-size: 1rem;
   }
 
-  /* Hero */
+  /* Hero — tighter top on mobile; premium theme overrides in style-coastal.css */
   .hero-section .relative.z-10 {
-    padding-top: 6.5rem;
-    padding-bottom: 5rem;
+    padding-top: 5rem;
+    padding-bottom: 3.5rem;
   }
 
   .hero-welcome-badge {
