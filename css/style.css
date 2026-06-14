@@ -28,6 +28,8 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -35,6 +37,27 @@ body {
   color: var(--color-brown);
   background-color: var(--color-cream);
   overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
+}
+
+body.menu-open {
+  overflow: hidden !important;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  touch-action: none;
+}
+
+html.menu-open {
+  overflow: hidden;
+}
+
+main,
+section {
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 ::selection {
@@ -242,23 +265,73 @@ body {
 
 /* --- Mobile Menu --- */
 .mobile-menu {
-  transform: translateX(100%);
-  transition: transform 0.4s var(--transition-smooth);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(300px, 85vw);
+  max-width: 85vw;
+  max-height: 100%;
+  max-height: 100dvh;
+  z-index: 70;
+  transform: translateX(105%);
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.35s var(--transition-smooth), visibility 0.35s;
+  will-change: transform;
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding-top: env(safe-area-inset-top, 0);
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.mobile-menu:not(.open) {
+  box-shadow: none !important;
 }
 
 .mobile-menu.open {
   transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
+  box-shadow: -8px 0 32px rgba(44, 24, 16, 0.15);
+}
+
+.mobile-menu > div:first-child,
+.mobile-menu > div:last-child {
+  flex-shrink: 0;
+}
+
+.mobile-menu > div:last-child {
+  padding-bottom: max(1.5rem, env(safe-area-inset-bottom, 0));
+}
+
+.mobile-menu > nav {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobile-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transition: opacity 0.3s ease, visibility 0.3s ease;
+  touch-action: none;
 }
 
 .mobile-overlay.open {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 /* --- Buttons --- */
@@ -671,6 +744,17 @@ body {
 .reviews-track {
   display: flex;
   transition: transform 0.5s var(--transition-smooth);
+  will-change: transform;
+}
+
+.reviews-slider-wrap {
+  overflow: hidden;
+  width: 100%;
+}
+
+#reviews .relative {
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .review-card {
@@ -890,14 +974,286 @@ body {
 }
 
 /* --- Responsive Adjustments --- */
-@media (max-width: 640px) {
-  .hero-content h1 {
-    font-size: 2.25rem;
+@media (max-width: 1023px) {
+  .hero-section {
+    min-height: auto;
+    padding-bottom: 4rem;
+  }
+}
+
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 72px;
+    overflow-x: hidden;
   }
 
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Hide decorative elements that bleed outside viewport */
+  .hero-kolam {
+    display: none !important;
+  }
+
+  .hero-section {
+    overflow: hidden !important;
+  }
+
+  .hero-coastal {
+    overflow: hidden !important;
+  }
+
+  .hero-image {
+    animation: none;
+    transform: scale(1.05);
+  }
+
+  .hero-showcase-float {
+    display: none !important;
+  }
+
+  /* Navbar */
+  .nav-brand-sub {
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+  }
+
+  .nav-brand-title {
+    font-size: 1.1rem;
+  }
+
+  .nav-brand-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: 1rem;
+  }
+
+  /* Hero */
+  .hero-section .relative.z-10 {
+    padding-top: 6.5rem;
+    padding-bottom: 5rem;
+  }
+
+  .hero-welcome-badge {
+    flex-wrap: wrap;
+    max-width: 100%;
+    padding: 0.4rem 0.75rem;
+    gap: 0.35rem;
+  }
+
+  .hero-welcome-badge span:last-child {
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+  }
+
+  .hero-tamil {
+    font-size: 0.85rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem !important;
+    line-height: 1.15;
+  }
+
+  .hero-pill {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.65rem;
+  }
+
+  .hero-content .flex-wrap.gap-3,
+  .hero-content .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-content .flex-wrap.gap-3 a,
+  .hero-content .hero-cta-group a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-scroll-indicator {
+    display: none;
+  }
+
+  /* Mobile hero food strip */
+  .hero-mobile-foods {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .hero-mobile-food {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0.75rem;
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  .hero-mobile-food img {
+    width: 100%;
+    height: 4rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .hero-mobile-food p {
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  /* About */
+  .about-image-wrap {
+    margin-bottom: 1.5rem;
+  }
+
+  .about-image-wrap img {
+    height: 260px !important;
+  }
+
+  .about-badge-card {
+    position: relative !important;
+    bottom: auto !important;
+    right: auto !important;
+    margin-top: 1rem;
+    max-width: 100% !important;
+    display: block !important;
+  }
+
+  /* Sections */
+  section {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  .section-title {
+    font-size: 1.75rem !important;
+  }
+
+  /* Menu filters - horizontal scroll inside container only */
+  .menu-filters-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+  }
+
+  /* Prevent page scroll when swiping menu filters */
+  #menu .max-w-7xl {
+    overflow-x: clip;
+  }
+
+  .menu-filters-wrap::-webkit-scrollbar {
+    display: none;
+  }
+
+  .menu-filter-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Signature cards */
+  .signature-card {
+    height: 14rem !important;
+  }
+
+  /* Reviews slider */
+  .reviews-slider-wrap {
+    margin-left: 2.75rem !important;
+    margin-right: 2.75rem !important;
+    overflow: hidden !important;
+    max-width: calc(100% - 5.5rem);
+  }
+
+  #reviews {
+    overflow: hidden;
+  }
+
+  #reviews .relative {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .reviews-track {
+    max-width: 100%;
+  }
+
+  .review-nav-btn {
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+  }
+
+  .review-card {
+    padding: 1.25rem !important;
+  }
+
+  /* Stats */
+  .stat-number {
+    font-size: 2rem !important;
+  }
+
+  /* Map */
+  .map-container {
+    height: 280px !important;
+  }
+
+  /* Contact */
+  .contact-info-card {
+    padding: 1rem !important;
+  }
+
+  /* Footer */
+  footer .grid {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-brand-sub {
+    display: none;
+  }
+
+  .hero-content h1 {
+    font-size: 1.75rem !important;
+  }
+
+  .hero-mobile-foods {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-mobile-foods {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
   #back-to-top {
-    bottom: 1.25rem;
-    right: 1.25rem;
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    right: max(1rem, env(safe-area-inset-right));
     width: 42px;
     height: 42px;
   }

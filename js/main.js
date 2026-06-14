@@ -15,7 +15,9 @@
     initMobileMenu();
     initScrollReveal();
     initMenuFilter();
-    initReviewsSlider();
+    if (!document.body.classList.contains('theme-premium')) {
+      initReviewsSlider();
+    }
     initCounters();
     initFAQ();
     initBackToTop();
@@ -78,25 +80,55 @@
     const overlay = document.getElementById('mobile-overlay');
     const closeBtn = document.getElementById('mobile-close');
     const mobileLinks = menu?.querySelectorAll('a');
+    let scrollPosition = 0;
+    let isOpen = false;
 
     if (!toggle || !menu) return;
 
+    function preventTouchMove(e) {
+      if (isOpen) e.preventDefault();
+    }
+
     function openMenu() {
+      if (isOpen) return;
+      isOpen = true;
+      scrollPosition = window.scrollY;
       menu.classList.add('open');
+      menu.setAttribute('aria-hidden', 'false');
       overlay?.classList.add('open');
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('menu-open');
+      document.body.classList.add('menu-open');
+      document.body.style.top = `-${scrollPosition}px`;
+      toggle.setAttribute('aria-expanded', 'true');
+      document.addEventListener('touchmove', preventTouchMove, { passive: false });
     }
 
     function closeMenu() {
+      if (!isOpen) return;
+      isOpen = false;
       menu.classList.remove('open');
+      menu.setAttribute('aria-hidden', 'true');
       overlay?.classList.remove('open');
-      document.body.style.overflow = '';
+      document.documentElement.classList.remove('menu-open');
+      document.body.classList.remove('menu-open');
+      document.body.style.top = '';
+      toggle.setAttribute('aria-expanded', 'false');
+      document.removeEventListener('touchmove', preventTouchMove);
+      window.scrollTo(0, scrollPosition);
     }
 
-    toggle.addEventListener('click', openMenu);
+    toggle.addEventListener('click', () => (isOpen ? closeMenu() : openMenu()));
     closeBtn?.addEventListener('click', closeMenu);
     overlay?.addEventListener('click', closeMenu);
     mobileLinks?.forEach((link) => link.addEventListener('click', closeMenu));
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isOpen) closeMenu();
+    });
+
+    window.addEventListener('resize', () => {
+      if (isOpen && window.innerWidth >= 1024) closeMenu();
+    });
   }
 
   /* --- Smooth Scroll --- */
